@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    container_name: microtize-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+    environment:
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Укажите ADMIN_PASSWORD в .env}
+      CORS_HOST: ${CORS_HOST:-microtize.ru}
+      DB_PATH: /app/data/leads.db

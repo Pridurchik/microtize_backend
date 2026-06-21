@@ -2,3 +2,8 @@
 /.gradle/
 /build/
 /build/classes/kotlin/main/
+
+# Runtime data / secrets
+/data/
+*.db
+.env
